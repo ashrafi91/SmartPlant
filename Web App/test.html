@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.1/font/bootstrap-icons.css">
+    <title>Smart Planter Data</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-md-6">
+                <h5>Name: Crepe jasmin</h5>
+                <h6>Location: Verandah</h6>
+                <div class="row">
+                    <div class="col-md-2">Last updated on:</div>
+                    <div class="col-md-10" id="datetime"></div>
+                </div>
+
+            </div>
+            <div class="col-md-6">
+
+                <div id="piechart">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">Light</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="card-title">Status</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <span><i class="bi bi-lightbulb"></i></span>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="text-align: left;" id="field2min"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 33%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="field2"></div>
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 33%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="text-align: right;" id="field2max"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">Soil Moisture</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="card-title">Status</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <span><i class="bi bi-moisture"></i></span>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="text-align: left;" id="field5min"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="field5"></div>
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 33%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="text-align: right;" id="field5max"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">Altitude</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="card-title">Status</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <span><i class="bi bi-thermometer-half"></i></span>
+                            </div>
+                            <div class="col-md-10">
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="text-align: left;" id="field4min"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 33%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="field4"></div>
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 33%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="text-align: right;" id="field4max"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">Temperature</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="card-title" id="temp_status"></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <span><i class="bi bi-thermometer-sun"></i></span>
+                            </div>
+                            <div class="col-md-10">
+
+                                <div id="example5.5" style="height: 150px;"></div>
+
+                                <div class="progress">
+                                    <div class="progress-bar" role="progressbar" style="width: 30%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="text-align: left;" id="field1min"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="field1"></div>
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 33%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="text-align: right;" id="field1max"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">Pressure</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="card-title">Status</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-1">
+                                <span><i class="bi bi-activity"></i></span>
+                            </div>
+                            <div class="col-md-10">
+
+                                <div class="progress">
+
+                                    <div class="progress-bar" role="progressbar" style="width: 33%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="text-align: left;" id="field3min"></div>
+                                    <div class="progress-bar bg-success" role="progressbar" style="width: 33%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100" id="field3"></div>
+                                    <div class="progress-bar bg-danger" role="progressbar" style="width: 33%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="text-align: right;" id="field3max"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card" id="temp_notification">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">Notifications</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="card-title" id="temp_msg"></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span><i class="bi bi-thermometer-sun"></i></span>
+                                <p id="temp_suggestion"></p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="pressure_notification">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">Notifications</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="card-title" id="pressure_msg"></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span><i class="bi bi-thermometer-sun"></i></span>
+                                <p id="pressure_suggestion">the soil should be warmer</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="soil_temp_notification">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">Notifications</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="card-title" id="soil_temp_msg"></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span><i class="bi bi-thermometer-sun"></i></span>
+                                <p id="soil_temp_suggestion">the soil should be warmer</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="soil_moisture_notification">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">Notifications</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="card-title" id="soil_moisture_msg"></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span><i class="bi bi-thermometer-sun"></i></span>
+                                <p id="soil_moisture_suggestion">the soil should be warmer</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card" id="altitude_notification">
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h5 class="card-title">Notifications</h5>
+                            </div>
+                            <div class="col-md-6">
+                                <h5 class="card-title" id="altitude_msg"></h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <span><i class="bi bi-thermometer-sun"></i></span>
+                                <p id="altitude_suggestion">the soil should be warmer</p>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+
+    <script type="text/javascript">
+    </script>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        var field1_min = 20;
+        var field1 = 0;
+        var field1_max = 24;
+        var field2 = 0;
+        var field3_min = '800';
+        var field3 = 0;
+        var field3_max = '1200';
+        var field4 = 0;
+        var field5 = 0;
+        var created_at = 0;
+        $(document).ready(function() {
+            GetData();
+
+        });
+
+        function GetData() {
+            var url = 'https://api.thingspeak.com/channels/1499063/feeds.json?results=1';
+            $.ajax({
+                url: url,
+                type: 'GET',
+                contentType: "application/json",
+                //dataType: "json",
+                //crossDomain: true,
+                success: function(data, textStatus, xhr) {
+                    $.each(data, function(i, item) {
+                        if (i == 'feeds') {
+                            var ubound = item.length;
+
+                            $('#field1min').html(20);
+                            $('#field1max').html(35);
+
+                            $('#field1').html(item[ubound - 1].field1);
+                            field1 = item[ubound - 1].field1;
+
+                            $('#field2min').html(180);
+                            $('#field2max').html(350);
+
+                            $('#field2').html(item[ubound - 1].field2);
+                            field2 = item[ubound - 1].field2;
+
+                            $('#field3min').html(1000);
+                            $('#field3max').html(1100);
+
+                            $('#field3').html(item[ubound - 1].field3);
+                            field3 = item[ubound - 1].field3;
+
+                            $('#field4min').html(3.5);
+                            $('#field4max').html(4.5);
+
+                            $('#field4').html(item[ubound - 1].field4);
+                            field4 = item[ubound - 1].field4;
+
+                            $('#field5min').html(30);
+                            $('#field5max').html(80);
+
+                            $('#field5').html(item[ubound - 1].field5);
+                            field5 = item[ubound - 1].field5;
+
+                            $('#datetime').html(new Date(item[ubound - 1].created_at)).toString();
+                            created_at = item[ubound - 1].created_at;
+
+
+                            $('#temp_status').html((Math.round(field1 * 100) / 100).toFixed(2) + '°C');
+
+                            var temp_msg = '';
+                            var temp_suggestion = '';
+                            if (!(field1 > field1_min && field1 < field1_max)) {
+                                if (field1 < field1_min) {
+                                    temp_msg = "The temperature is too cold";
+                                    temp_suggestion = 'The temperature should be warmer!' + '<br/>The ideal temperature is ' + field1_min + '°C to ' + field1_max + '°C degrees. The current temperature is <span style="color:blue;">' + (Math.round(field1 * 100) / 100).toFixed(2) + '°C</span>' + '.<br/>Please move the plant to a warmer location.';
+                                } else if (field1 > field1_max) {
+                                    temp_msg = "The temperature is too hot";
+                                    temp_suggestion = 'The temperature should be colder!' + '<br/>The ideal temperature is ' + field1_min + '°C to ' + field1_max + '°C degrees. The current temperature is <span style="color:red;">' + (Math.round(field1 * 100) / 100).toFixed(2) + '°C</span>' + '.<br/>Please move the plant to a colder location.';
+                                }
+                                $('#temp_msg').html(temp_msg);
+
+                                $('#temp_suggestion').html(temp_suggestion);
+                            } else {
+                                $('#temp_notification').css('display', 'none');
+                            }
+
+                            var soil_temp_msg = '';
+                            if (!(field2 > 180 && field2 < 350)) {
+                                if (field2 < 180) {
+                                    soil_temp_msg = "The plant is not getting enough sunlight";
+                                } else if (field2 > 350) {
+                                    soil_temp_msg = "The plant is getting too much sunlight";
+                                }
+                                $('#soil_temp_msg').html(soil_temp_msg);
+                            } else {
+                                $('#soil_temp_notification').css('display', 'none');
+                            }
+
+                            var soil_moisture_msg = '';
+                            if (!(field5 > 30 && field5 < 80)) {
+                                if (field5 < 30) {
+                                    soil_moisture_msg = "The soil moisture is too low";
+                                } else if (field5 > 80) {
+                                    soil_moisture_msg = "The soil moisture is too high";
+                                }
+                                $('#soil_moisture_msg').html(soil_moisture_msg);
+                            } else {
+                                $('#soil_moisture_notification').css('display', 'none');
+                            }
+
+                            var pressure_msg = '';
+                            if (!(field3 > 1000 && field3 < 1100)) {
+                                if (field3 < 1000) {
+                                    pressure_msg = "The pressure is too low";
+                                } else if (field3 > 1100) {
+                                    pressure_msg = "The pressure is too high";
+                                }
+                                $('#pressure_msg').html(pressure);
+                            } else {
+                                $('#pressure_notification').css('display', 'none');
+                            }
+
+                            var altitude_msg = '';
+                            if (!(field4 > 3.5 && field4 < 4.5)) {
+                                if (field4 < 3.5) {
+                                    altitude_msg = "The altitude is too low";
+                                } else if (field4 > 4.5) {
+                                    altitude_msg = "The soil is too high";
+                                }
+                                $('#altitude_msg').html(altitude_msg);
+                            } else {
+                                $('#altitude_notification').css('display', 'none');
+                            }
+
+                        }
+                    });
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+
+            setTimeout(GetData, 10000);
+            google.charts.load("current", {
+                packages: ["corechart", "timeline"]
+            });
+            google.charts.setOnLoadCallback(drawChart);
+            google.charts.setOnLoadCallback(drawChart_meter);
+            //drawanotherchart();
+        }
+
+        function drawChart_meter() {
+            var container = document.getElementById('example5.5');
+            var chart = new google.visualization.Timeline(container);
+            var dataTable = new google.visualization.DataTable();
+            dataTable.addColumn({
+                type: 'string',
+                id: 'Role'
+            });
+            dataTable.addColumn({
+                type: 'string',
+                id: 'Name'
+            });
+            dataTable.addColumn({
+                type: 'string',
+                role: 'tooltip'
+            });
+            dataTable.addColumn({
+                type: 'number',
+                id: 'Start'
+            });
+            dataTable.addColumn({
+                type: 'number',
+                id: 'End'
+            });
+            dataTable.addColumn({
+                type: 'string',
+                role: 'style'
+            });
+            dataTable.addRows([
+                ['Temperature', 'Low', 'Lowest temperature range is: ' + String(field1_min - 3 + '°C to ' + field1_min + '°C'), field1_min - 3, field1_min, 'null'],
+                ['Temperature', 'Normal', 'Normal temperature range is: ' + String(field1_min + '°C to ' + field1_max + '°C'), field1_min, field1_max, 'null'],
+                ['Temperature', 'High', 'Highest temperature range is: ' + String(field1_max + '°C to ' + parseInt(field1_max + 3) + '°C'), field1_max, field1_max + 3, 'null'],
+                ['Temperature', String((Math.round(field1 * 100) / 100).toFixed(2) + '°C'), 'Current temperature is: ' + String(field1 + '°C'), parseInt(field1), parseInt(field1), 'null'],
+                ['Temperature', String(field1_min + '°C'), 'Lowest tolerable temperature is: ' + String(field1_min + '°C'), field1_min, field1_min, 'point { size: 18; shape-type: star; fill-color: #a52714; }'],
+                ['Temperature', String(field1_max + '°C'), 'Highest tolerable temperature is: ' + String(field1_max + '°C'), field1_max, field1_max, 'null'],
+                ['Temperature', String(field1_min - 3 + '°C'), 'Displayed lowest temperature is: ' + String(field1_min - 3 + '°C'), field1_min - 3, field1_min - 3, 'null'],
+                ['Temperature', String(field1_max + 3 + '°C'), 'Displayed Highest temperature is: ' + String(field1_max + 3 + '°C'), field1_max + 3, field1_max + 3, 'null'],
+            ]);
+
+            var options = {
+                colors: ['#dc3545', '#198754', '#dc3545', '#000000', '#000000', '#000000', '#000000', '#000000'],
+                pointSize: 7,
+                dataOpacity: 0.3,
+
+            };
+
+
+            chart.draw(dataTable, options);
+
+
+        }
+
+        function drawChart2() {
+
+            var data = google.visualization.arrayToDataTable([
+                ['Type', 'Lowest', 'Low', 'Current', 'High',
+                    'Max', {
+                        role: 'annotation'
+                    }
+                ],
+                ['Temp', field1_min, 1, field1_max - field1_min, 1, field1_max + 3 - field1_max, ''],
+            ]);
+
+            var options = {
+                width: 600,
+                height: 100,
+                legend: 'none',
+                bar: {
+                    groupWidth: '75%'
+                },
+                isStacked: true,
+            };
+
+            var chart = new google.visualization.BarChart(document.getElementById('example5.5'));
+            chart.draw(data, options);
+        }
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Task', 'Proportion'],
+                ['Light', 5],
+                ['Soil Moisture', 5],
+                ['Soil Temperature', 5],
+                ['Temperature', 5],
+                ['Pressure', 5]
+            ]);
+            var color1 = (field2 >= 200 && field2 < 600) ? '#198754' : '#dc3545';
+            var color2 = (field5 >= 30 && field5 < 80) ? '#198754' : '#dc3545';
+            var color3 = (field3 >= 1000 && field3 < 1200) ? '#198754' : '#dc3545';
+            var color4 = (field1 >= 20 && field1 < 35) ? '#198754' : '#dc3545';
+            var color5 = (field4 >= 3.5 && field4 < 4.5) ? '#198754' : '#dc3545';
+            var options = {
+                title: 'Progress',
+                pieHole: 0.4,
+                colors: [color1, color2, color3, color4, color5],
+                legend: 'none',
+                width: '400',
+                height: '400',
+
+            };
+
+
+
+            var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+            chart.draw(data, options);
+        }
+    </script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    -->
+    <script src="https://unpkg.com/ag-charts-community@4.2.0/dist/ag-charts-community.min.js">
+    </script>
+</body>
+
+</html>
