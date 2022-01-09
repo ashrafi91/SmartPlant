@@ -250,7 +250,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+
     <script type="text/javascript">
         var field1_min = 18;
         var field1 = 0;
@@ -471,18 +471,16 @@
             });
             dataTable.addRows([
                 [metric, 'Low', 'Lowest  ' + metric + '  range is: ' + String(field_min - (field_max - field_min) * 0.2 + unit + ' to ' + field_min + unit), field_min - (field_max - field_min) * 0.2, field_min, 'null'],
-                [metric, String(field_min + unit), 'Lowest tolerable  ' + metric + '  is: ' + String(field_min + unit), field_min, field_min, 'null'],
                 [metric, 'Normal', 'Normal  ' + metric + '  range is: ' + String(field_min + unit + ' to ' + field_max + unit), field_min, field_max, 'null'],
-                [metric, String(field_max + unit), 'Highest tolerable  ' + metric + '  is: ' + String(field_max + unit), field_max, field_max, 'null'],
                 [metric, 'High', 'Highest  ' + metric + '  range is: ' + String(field_max + unit + ' to ' + parseInt(field_max + (field_max - field_min) * 0.2) + unit), field_max, field_max + (field_max - field_min) * 0.2, 'null'],
+                [metric, String(field_min + unit), 'Lowest tolerable  ' + metric + '  is: ' + String(field_min + unit), field_min, field_min, 'null'],
                 [metric, String((Math.round(field * 100) / 100).toFixed(2) + unit), 'Current ' + metric + ' is: ' + String(field + unit), parseInt(field), parseInt(field), 'null'],
-
-
+                [metric, String(field_max + unit), 'Highest tolerable  ' + metric + '  is: ' + String(field_max + unit), field_max, field_max, 'null'],
             ]);
             var current_color = (field > field_max) ? 'red' : ((field < field_min) ? 'blue' : 'black');
 
             var options = {
-                colors: ['#0d6efd', '#000000', '#198754', '#000000', '#dc3545', current_color],
+                colors: ['#0d6efd', '#198754', '#dc3545', '#000000', current_color, '#000000'],
             };
 
             chart.draw(dataTable, options);

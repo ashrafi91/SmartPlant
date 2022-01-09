@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SmartPlanter - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-seedling"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">SmartPlanter</sup>
+                </div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Topbar Search -->
+                    <form class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+
+                    <!-- Topbar Navbar -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                        <li class="nav-item dropdown no-arrow d-sm-none">
+                            <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-search fa-fw"></i>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
+                                <form class="form-inline mr-auto w-100 navbar-search">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-primary" type="button">
+                                                <i class="fas fa-search fa-sm"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </li>
+
+                        <!-- Nav Item - Alerts -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter" id="not_count"></span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="alertsDropdown" id="notification">
+                                <h6 class="dropdown-header">
+                                    Alerts Center
+                                </h6>
+                            </div>
+                        </li>
+
+
+
+                        <div class="topbar-divider d-none d-sm-block"></div>
+
+                        <!-- Nav Item - User Information -->
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">John Doe</span>
+                                <img class="img-profile rounded-circle" src="img/undraw_profile.svg">
+                            </a>
+                            <!-- Dropdown - User Information -->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i> Profile
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i> Settings
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-list fa-sm fa-fw mr-2 text-gray-400"></i> Activity Log
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Logout
+                                </a>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+
+                    <!-- Page Heading -->
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h3 class="m-0 font-weight-bold text-primary p-2">Plant Name: Crepe Jasmin</h3>
+                        <a href="#" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i
+                                class="fas fa-download fa-sm text-white-50"></i> Generate Report</a>
+                    </div>
+
+                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                        <h6 class="h6 mb-0 text-gray-800 mr-auto p-2">Location: Verandah</h6>
+                        <h6 class="h6 mb-0 text-gray-800 p-2">Last updated on:</h6>
+                        <h6 class="h6 mb-0 text-gray-800 p-2" id="datetime"></h6>
+                    </div>
+
+                    <!-- Content Row -->
+
+                    <div class="row">
+
+                        <!-- Area Chart -->
+                        <div class="col-xl-8 col-lg-7">
+
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Temperature</h6>
+                                    <div class="dropdown no-arrow">
+                                        <h5 class="m-0 font-weight-bold text-primary" id="temp_status" style="float: left;"></h5>
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body" style="padding-bottom: 0rem !important;">
+                                    <div id="temp_stat" class="status" style="height: 150px;"></div>
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Soil Temperature</h6>
+                                    <div class="dropdown no-arrow">
+                                        <h5 class="m-0 font-weight-bold text-primary" id="soil_temp_status" style="float: left;"></h5>
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body" style="padding-bottom: 0rem !important;">
+                                    <div id="soil_temp_stat" class="status" style="height: 150px;"></div>
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Pressure</h6>
+                                    <div class="dropdown no-arrow">
+                                        <h5 class="m-0 font-weight-bold text-primary" id="pressure_status" style="float: left;"></h5>
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body" style="padding-bottom: 0rem !important;">
+                                    <div id="pressure_stat" class="status" style="height: 150px;"></div>
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Soil Moisture</h6>
+                                    <div class="dropdown no-arrow">
+                                        <h5 class="m-0 font-weight-bold text-primary" id="moisture_status" style="float: left;"></h5>
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body" style="padding-bottom: 0rem !important;">
+                                    <div id="moisture_stat" class="status" style="height: 150px;"></div>
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Light</h6>
+                                    <div class="dropdown no-arrow">
+                                        <h5 class="m-0 font-weight-bold text-primary" id="light_status" style="float: left;"></h5>
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body" style="padding-bottom: 0rem !important;">
+                                    <div id="light_stat" class="status" style="height: 150px;"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Pie Chart -->
+                        <div class="col-xl-4 col-lg-5">
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="mb-0 font-weight-bold text-primary">Progress</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div id="chartDiv">
+
+                                    </div>
+                                    <div class="mt-4 text-center small">
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-primary"></i> Low
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-success"></i> Normal
+                                        </span>
+                                        <span class="mr-2">
+                                            <i class="fas fa-circle text-danger"></i> High
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card shadow mb-4">
+                                <!-- Card Header - Dropdown -->
+                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                    <h6 class="m-0 font-weight-bold text-primary">Notifications</h6>
+                                    <div class="dropdown no-arrow">
+                                        <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                        </a>
+                                        <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in" aria-labelledby="dropdownMenuLink">
+                                            <div class="dropdown-header">Dropdown Header:</div>
+                                            <a class="dropdown-item" href="#">Action</a>
+                                            <a class="dropdown-item" href="#">Another action</a>
+                                            <div class="dropdown-divider"></div>
+                                            <a class="dropdown-item" href="#">Something else here</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Card Body -->
+                                <div class="card-body">
+                                    <div class="card" id="temp_notification">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h5 class="m-0 font-weight-bold text-primary"><span><i class="bi bi-thermometer-sun"></i></span>Temperature</h5>
+                                                </div>
+
+                                                <div class="col-md-6">
+                                                    <a href="#" class="btn btn-warning btn-icon-split">
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-exclamation-triangle"></i>
+                                                        </span>
+                                                        <span class="text" id="temp_msg"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+                                                    <p id="temp_suggestion"></p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card" id="pressure_notification">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h5 class="m-0 font-weight-bold text-primary"><span><i class="bi bi-thermometer-sun"></i></span>Pressure</h5>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <a href="#" class="btn btn-warning btn-icon-split">
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-exclamation-triangle"></i>
+                                                        </span>
+                                                        <span class="text" id="pressure_msg"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <p id="pressure_suggestion"></p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card" id="soil_temp_notification">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h5 class="m-0 font-weight-bold text-primary"><span><i class="bi bi-thermometer-sun"></i></span>Soil Temperature</h5>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <a href="#" class="btn btn-warning btn-icon-split">
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-exclamation-triangle"></i>
+                                                        </span>
+                                                        <span class="text" id="soil_temp_msg"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <p id="soil_temp_suggestion"></p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card" id="moisture_notification">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h5 class="m-0 font-weight-bold text-primary"><span><i class="bi bi-thermometer-sun"></i></span>Soil Moisture</h5>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <a href="#" class="btn btn-warning btn-icon-split">
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-exclamation-triangle"></i>
+                                                        </span>
+                                                        <span class="text" id="moisture_msg"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <p id="moisture_suggestion"></p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card" id="light_notification">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <h5 class="m-0 font-weight-bold text-primary"><span><i class="bi bi-thermometer-sun"></i></span>Light</h5>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <a href="#" class="btn btn-warning btn-icon-split">
+                                                        <span class="icon text-white-50">
+                                                            <i class="fas fa-exclamation-triangle"></i>
+                                                        </span>
+                                                        <span class="text" id="light_msg"></span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-md-12">
+
+                                                    <p id="light_suggestion"></p>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                </div>
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; SmartPlanter 2021</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="login.html">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="alert" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="false">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">This webpage would like to play sounds</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Select "Allow" below if you want to hear notification sounds</div>
+                <div class="modal-footer">
+                    <button value="0" class="btn btn-secondary" type="button" data-dismiss="modal">Allow</button>
+                    <button value="1" class="btn btn-secondary" type="button" data-dismiss="modal">Block</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="alert">
+        <p>This webpage would like to play sounds</p>
+        <p class="buttons">
+            <button value="0">Block</button>
+            <button value="1">Allow</button>
+        </p>
+    </div>
+    <button id="btn">trigger notification</button> -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+    <script type="text/javascript">
+        var field1_min = 18;
+        var field1 = 0;
+        var field1_max = 35;
+        var field2_min = 180;
+        var field2 = 0;
+        var field2_max = 350;
+        var field3_min = 1000;
+        var field3 = 0;
+        var field3_max = 1085;
+        var field4_min = 18;
+        var field4 = 0;
+        var field4_max = 30;
+        var field5_min = 20;
+        var field5 = 0;
+        var field5_max = 65;
+        var created_at = 0;
+        var temp_not = 0;
+        var soil_temp_not = 0;
+        var moisture_not = 0;
+        var pressure_not = 0;
+        var light_not = 0;
+        var not_count = 0;
+        $(document).ready(function() {
+            GetData();
+
+        });
+
+        function GetData() {
+            var url = 'https://api.thingspeak.com/channels/1499063/feeds.json?results=1';
+            $.ajax({
+                url: url,
+                type: 'GET',
+                contentType: "application/json",
+                success: function(data, textStatus, xhr) {
+                    $.each(data, function(i, item) {
+                        if (i == 'feeds') {
+                            var ubound = item.length;
+
+                            $('#field1min').html(field1_min);
+                            $('#field1max').html(field1_max);
+
+                            $('#field1').html(item[ubound - 1].field1);
+                            field1 = item[ubound - 1].field1;
+
+                            $('#field2min').html(field2_min);
+                            $('#field2max').html(field2_max);
+
+                            $('#field2').html(item[ubound - 1].field2);
+                            field2 = item[ubound - 1].field2;
+
+                            $('#field3min').html(field3_min);
+                            $('#field3max').html(field3_max);
+
+                            $('#field3').html(item[ubound - 1].field3);
+                            field3 = item[ubound - 1].field3;
+
+                            $('#field4min').html(field4_min);
+                            $('#field4max').html(field4_max);
+
+                            $('#field4').html(item[ubound - 1].field4);
+                            field4 = item[ubound - 1].field4;
+
+                            $('#field5min').html(field5_min);
+                            $('#field5max').html(field5_max);
+
+                            $('#field5').html(item[ubound - 1].field5);
+                            field5 = item[ubound - 1].field5;
+
+                            var dateTime_options = {
+                                weekday: 'long',
+                                year: 'numeric',
+                                month: 'long',
+                                day: 'numeric',
+                                hour: '2-digit',
+                                minute: 'numeric',
+                                second: 'numeric',
+                            };
+
+                            var dateTime = new Date(item[ubound - 1].created_at);
+                            $('#datetime').html(dateTime.toLocaleDateString("en-US", dateTime_options));
+                            created_at = item[ubound - 1].created_at;
+
+
+                            $('#temp_status').html((Math.round(field1 * 100) / 100).toFixed(2) + '°C');
+
+                            var temp_msg = '';
+                            var temp_suggestion = '';
+                            if (!(field1 > field1_min && field1 < field1_max)) {
+                                if (field1 < field1_min) {
+                                    temp_msg = "The temperature is too cold";
+                                    temp_suggestion = 'The temperature should be warmer!' + '<br/>The ideal temperature is ' + field1_min + '°C to ' + field1_max + '°C degrees. The current temperature is <span style="color:blue;">' + (Math.round(field1 * 100) / 100).toFixed(2) + '°C</span>' + '.<br/>Please move the plant to a warmer location.';
+                                } else if (field1 > field1_max) {
+                                    temp_msg = "The temperature is too hot";
+                                    temp_suggestion = 'The temperature should be colder!' + '<br/>The ideal temperature is ' + field1_min + '°C to ' + field1_max + '°C degrees. The current temperature is <span style="color:red;">' + (Math.round(field1 * 100) / 100).toFixed(2) + '°C</span>' + '.<br/>Please move the plant to a colder location.';
+                                }
+                                $('#temp_msg').html(temp_msg);
+
+                                $('#temp_suggestion').html(temp_suggestion);
+                                var temp_notification = '<a class="dropdown-item d-flex align-items-center" href="#"><div class="mr-3"><div class="icon-circle bg-warning"><i class="fas fa-exclamation-triangle text-white"></i></div></div><div><div class="small text-gray-500">' + dateTime.toLocaleDateString("en-US", dateTime_options) + '</div><span class="font-weight-bold">' + temp_msg + '</span></div></a>';
+                                if (temp_not == 0) {
+                                    $('#notification').append(temp_notification);
+                                    temp_not = 1;
+                                    not_count++;
+                                }
+
+                            } else {
+                                temp_not = 0;
+                                $('#temp_notification').css('display', 'none');
+                            }
+
+                            $('#soil_temp_status').html((Math.round(field4 * 100) / 100).toFixed(2) + '°C');
+
+                            var soil_temp_msg = '';
+                            if (!(field4 > field4_min && field4 < field4_max)) {
+                                if (field4 < field4_min) {
+                                    soil_temp_msg = "The soil temperature is too cold";
+                                    soil_temp_suggestion = 'The soil temperature should be warmer!' + '<br/>The ideal soil temperature is ' + field4_min + '°C to ' + field4_max + '°C degrees. The current soil temperature is <span style="color:blue;">' + (Math.round(field4 * 100) / 100).toFixed(2) + '°C</span>' + '.<br/>Please move the plant to a warmer location.';
+                                } else if (field4 > field4_max) {
+                                    soil_temp_msg = "The soil temperature is too hot";
+                                    soil_temp_suggestion = 'The soil temperature should be colder!' + '<br/>The ideal soil temperature is ' + field4_min + '°C to ' + field4_max + '°C degrees. The current soil temperature is <span style="color:red;">' + (Math.round(field4 * 100) / 100).toFixed(2) + '°C</span>' + '.<br/>Please move the plant to a colder location.';
+                                }
+                                $('#soil_temp_msg').html(soil_temp_msg);
+
+                                $('#soil_temp_suggestion').html(soil_temp_suggestion);
+                                var soil_temp_notification = '<a class="dropdown-item d-flex align-items-center" href="#"><div class="mr-3"><div class="icon-circle bg-warning"><i class="fas fa-exclamation-triangle text-white"></i></div></div><div><div class="small text-gray-500">' + dateTime.toLocaleDateString("en-US", dateTime_options) + '</div><span class="font-weight-bold">' + soil_temp_msg + '</span></div></a>';
+
+                                if (soil_temp_not == 0) {
+                                    $('#notification').append(soil_temp_notification);
+                                    soil_temp_not = 1;
+                                    not_count++;
+                                }
+                            } else {
+                                $('#soil_temp_notification').css('display', 'none');
+                                soil_temp_not = 0;
+                            }
+
+
+                            $('#moisture_status').html((Math.round(field5 * 100) / 100).toFixed(2) + '%');
+
+                            var moisture_msg = '';
+                            if (!(field5 > field5_min && field5 < field5_max)) {
+                                if (field5 < field5_min) {
+                                    moisture_msg = "The soil moisture is too low";
+                                    moisture_suggestion = 'The soil moisture should be higher!' + '<br/>The ideal soil moisture is ' + field5_min + '% to ' + field5_max + '%. The current soil moisture is <span style="color:blue;">' + (Math.round(field5 * 100) / 100).toFixed(2) + '%</span>' + '.<br/>Please water the plant now.';
+                                } else if (field5 > field5_max) {
+                                    moisture_msg = "The soil moisture is high";
+                                    moisture_suggestion = 'The soil moisture should be lower!' + '<br/>The ideal soil moisture is ' + field5_min + '% to ' + field5_max + '%. The current soil moisture is <span style="color:red;">' + (Math.round(field5 * 100) / 100).toFixed(2) + '%</span>' + '.<br/>Please remove/stop watering the plant now.';
+                                }
+                                $('#moisture_msg').html(moisture_msg);
+
+                                $('#moisture_suggestion').html(moisture_suggestion);
+                                var moisture_notification = '<a class="dropdown-item d-flex align-items-center" href="#"><div class="mr-3"><div class="icon-circle bg-warning"><i class="fas fa-exclamation-triangle text-white"></i></div></div><div><div class="small text-gray-500">' + dateTime.toLocaleDateString("en-US", dateTime_options) + '</div><span class="font-weight-bold">' + moisture_msg + '</span></div></a>';
+
+                                if (moisture_not == 0) {
+                                    $('#notification').append(moisture_notification);
+                                    moisture_not = 1;
+                                    not_count++;
+                                }
+                            } else {
+                                $('#moisture_notification').css('display', 'none');
+                                moisture_not = 0;
+                            }
+
+                            $('#pressure_status').html((Math.round(field3 * 100) / 100).toFixed(2) + ' mBar');
+
+                            var pressure_msg = '';
+                            if (!(field3 > field3_min && field3 < field3_max)) {
+                                if (field3 < field3_min) {
+                                    pressure_msg = "The pressure is too low";
+                                    pressure_suggestion = 'The pressure should be higher!' + '<br/>The ideal pressure is ' + field3_min + ' mBar to ' + field3_max + ' mBar. The current pressure is <span style="color:blue;">' + (Math.round(field3 * 100) / 100).toFixed(2) + ' mBar</span>' + '.<br/>Please put the plant at a lower altitude.';
+                                } else if (field3 > field3_max) {
+                                    pressure_msg = "The pressure is too high";
+                                    pressure_suggestion = 'The pressure should be lower!' + '<br/>The ideal pressure is ' + field3_min + ' mBar to ' + field3_max + ' mBar. The current pressure is <span style="color:red;">' + (Math.round(field3 * 100) / 100).toFixed(2) + ' mBar</span>' + '.<br/>Please put the plant at a higher altitude';
+                                }
+                                $('#pressure_msg').html(pressure_msg);
+
+                                $('#pressure_suggestion').html(pressure_suggestion);
+                                var pressure_notification = '<a class="dropdown-item d-flex align-items-center" href="#"><div class="mr-3"><div class="icon-circle bg-warning"><i class="fas fa-exclamation-triangle text-white"></i></div></div><div><div class="small text-gray-500">' + dateTime.toLocaleDateString("en-US", dateTime_options) + '</div><span class="font-weight-bold">' + pressure_msg + '</span></div></a>';
+
+                                if (pressure_not == 0) {
+                                    $('#notification').append(pressure_notification);
+                                    pressure_not = 1;
+                                    not_count++;
+                                }
+                            } else {
+                                $('#pressure_notification').css('display', 'none');
+                                pressure_not = 0;
+                            }
+
+                            $('#light_status').html((Math.round(field2 * 100) / 100).toFixed(2) + ' lux');
+
+                            var light_msg = '';
+                            if (!(field2 > field2_min && field2 < field2_max)) {
+                                if (field2 < field2_min) {
+                                    light_msg = "The light is too dim";
+                                    light_suggestion = 'The light should be brighter!' + '<br/>The ideal light amount is ' + field2_min + ' lux to ' + field2_max + ' lux. The current light intensity is <span style="color:blue;">' + (Math.round(field2 * 100) / 100).toFixed(2) + ' lux</span>' + '.<br/>Please put the plant at a brighter location.';
+                                } else if (field2 > field2_max) {
+                                    light_msg = "The light is too bright";
+                                    light_suggestion = 'The light should be dimmer!' + '<br/>The ideal light amount is ' + field2_min + ' lux to ' + field2_max + ' lux. The current light intensity is <span style="color:red;">' + (Math.round(field2 * 100) / 100).toFixed(2) + ' lux</span>' + '.<br/>Please put the plant at a shaded location.';
+                                }
+                                $('#light_msg').html(light_msg);
+
+                                $('#light_suggestion').html(light_suggestion);
+                                var light_notification = '<a class="dropdown-item d-flex align-items-center" href="#"><div class="mr-3"><div class="icon-circle bg-warning"><i class="fas fa-exclamation-triangle text-white"></i></div></div><div><div class="small text-gray-500">' + dateTime.toLocaleDateString("en-US", dateTime_options) + '</div><span class="font-weight-bold">' + light_msg + '</span></div></a>';
+
+                                if (light_not == 0) {
+                                    $('#notification').append(light_notification);
+                                    light_not = 1;
+                                    not_count++;
+                                }
+                            } else {
+                                $('#light_notification').css('display', 'none');
+                                light_not = 0;
+                            }
+
+                            $('#not_count').html(String(not_count));
+                        }
+                    });
+                },
+                error: function(xhr, textStatus, errorThrown) {
+                    alert(errorThrown);
+                }
+            });
+
+            setTimeout(GetData, 1000);
+
+            var chart = JSC.chart('chartDiv', {
+                debug: false,
+                legend: {
+                    visible: false
+                },
+                defaultSeries_type: 'pieDonut',
+                defaultPoint: {
+                    outline: {
+                        color: 'white',
+                        width: 3
+                    }
+                },
+                series: [{
+                    shape_size: '100%',
+                    name: 'Countries',
+                    points: [{
+                        name: 'Temperature',
+                        y: 5,
+                        label_text: '<span align="center">Temperature <br/>' + String((Math.round(field1 * 100) / 100).toFixed(2) + '°C</span>'),
+                        tooltip: 'Normal temperature range is: ' + String(field1_min + '°C' + ' to ' + field1_max + '°C'),
+                        color: (field1 >= field1_min && field1 < field1_max) ? '#198754' : (field1 < field1_min) ? '#0d6efd' : '#dc3545'
+
+                    }, {
+                        name: 'Soil Temperature',
+                        y: 5,
+                        label_text: '<span align="center">Soil temperature <br/>' + String((Math.round(field4 * 100) / 100).toFixed(2) + '°C</span>'),
+                        tooltip: 'Normal soil temperature range is: ' + String(field4_min + '°C' + ' to ' + field4_max + '°C'),
+                        color: (field4 >= field4_min && field4 < field4_max) ? '#198754' : (field4 < field4_min) ? '#0d6efd' : '#dc3545'
+                    }, {
+                        name: 'Pressure',
+                        y: 5,
+                        label_text: '<span align="center">Pressure <br/>' + String((Math.round(field3 * 100) / 100).toFixed(2) + ' mBar</span>'),
+                        tooltip: 'Normal pressure range is: ' + String(field3_min + ' mBar' + ' to ' + field3_max + ' mBar'),
+                        color: (field3 >= field3_min && field3 < field3_max) ? '#198754' : (field3 < field3_min) ? '#0d6efd' : '#dc3545'
+                    }, {
+                        name: 'Moisture',
+                        y: 5,
+                        label_text: '<span align="center">Moisture <br/>' + String((Math.round(field5 * 100) / 100).toFixed(2) + '%</span>'),
+                        tooltip: 'Normal moisture range is: ' + String(field5_min + ' %' + ' to ' + field5_max + ' %'),
+                        color: (field5 >= field5_min && field5 < field5_max) ? '#198754' : (field5 < field5_min) ? '#0d6efd' : '#dc3545'
+                    }, {
+                        name: 'Light',
+                        y: 5,
+                        label_text: '<span align="center">Light <br/>' + String((Math.round(field2 * 100) / 100).toFixed(2) + ' lux</span>'),
+                        tooltip: 'Normal light range is: ' + String(field2_min + ' lux' + ' to ' + field2_max + ' lux'),
+                        color: (field2 >= field2_min && field2 < field2_max) ? '#198754' : (field2 < field2_min) ? '#0d6efd' : '#dc3545'
+                    }]
+                }]
+            });
+
+            jscchart('temp_stat', 'Temperature', field1_max, field1_min, field1, '°C');
+            jscchart('soil_temp_stat', 'Soil Temperature', field4_max, field4_min, field4, '°C');
+            jscchart('pressure_stat', 'Pressure', field3_max, field3_min, field3, ' mBar');
+            jscchart('moisture_stat', 'Moisture', field5_max, field5_min, field5, '%');
+            jscchart('light_stat', 'Light', field2_max, field2_min, field2, ' lux');
+
+
+        }
+
+
+        function jscchart(container_name, metric, field_max, field_min, field, unit) {
+
+            var chart = JSC.chart(container_name, {
+                debug: false,
+                type: 'gauge linear horizontal',
+                defaultSeries_type: 'column roundcaps',
+                legend_visible: false,
+                xAxis: [{
+                    spacingPercentage: 0.7,
+                    staticColumnWidth: 20,
+                    defaultTick: {
+                        /*Defining label object enables it.*/
+                        label: {}
+                    }
+                }],
+                yAxis: [{
+                    autoRotate: 0,
+                    scale: {
+                        range: [field_min - (field_max - field_min) * .3, field_max + (field_max - field_min) * .3],
+                        interval: 1
+                    },
+                    line_color: '#e9e9e9',
+                    defaultTick: {
+                        enabled: false,
+                    },
+                    rotate: 0,
+                    customTicks: [{
+                        value: (Math.round((field_min - (field_max - field_min) * .3) * 100) / 100).toFixed(1),
+                        label_text: String(field_min - (field_max - field_min) * .3) + unit
+                    }, {
+                        value: (Math.round((field_min - (field_max - field_min) * .15) * 100) / 100).toFixed(1),
+                        label_text: '<br/><br/><b>Low</b>',
+                    }, {
+                        value: (field_min + field_max) / 2,
+                        label_text: '<br/><br/><b>Normal</b>',
+                    }, {
+                        value: (Math.round((field_max + (field_max - field_min) * .3) * 100) / 100).toFixed(1),
+                        label_text: String(field_max + (field_max - field_min) * .3) + unit
+                    }, {
+                        value: (Math.round((field_max + (field_max - field_min) * .15) * 100) / 100).toFixed(1),
+                        label_text: '<br/><br/><b>High</b>',
+                    }, {
+                        orientation: 'top',
+                        value: field_min,
+                        gridLine: {
+                            width: 2,
+                            dashStyle: 'solid',
+                            color: 'black',
+                            onTop: true
+                        },
+                        label_text: String(field_min + unit)
+                    }, {
+                        value: field_max,
+                        gridLine: {
+                            width: 2,
+                            dashStyle: 'solid',
+                            color: 'black',
+                            onTop: true
+                        },
+                        label_text: String(field_max + unit),
+                    }],
+                    markers: [{
+                        value: parseInt(field),
+                        marker: {
+                            visible: true,
+                            fill: '#000000',
+                            onTop: true,
+                        }
+                    }],
+                }, ],
+                /*Default point marker options. Markers are not visible by default on columns.*/
+                defaultSeries: {
+                    defaultPoint: {
+                        label: {
+                            padding: 15,
+                            font_size: 12,
+                        }
+                    }
+                },
+                series: [{
+                    type: 'column roundcaps',
+                    points: [{
+                        x: ' ',
+                        y: [parseInt(field_min), parseInt(field_max)],
+                        tooltip: 'Normal ' + metric + ' range is: ' + String(field_min + unit) + ' to ' + String(field_max + unit),
+                    }, ],
+                }, {
+                    points: [{
+                        x: ' ',
+                        y: [parseInt(field) > field_max + (field_max - field_min) * .3 ? field_max + (field_max - field_min) * .3 : parseInt(field) < field_min - (field_max - field_min) * .3 ? field_min - (field_max - field_min) * .3 : parseInt(field), parseInt(field) > field_max + (field_max - field_min) * .3 ? field_max + (field_max - field_min) * .3 : parseInt(field) < field_min - (field_max - field_min) * .3 ? field_min - (field_max - field_min) * .3 : parseInt(field)],
+                        label: {
+                            text: parseInt(field) > field_max + (field_max - field_min) * .3 ? '> ' + String((Math.round((field_max + (field_max - field_min) * .3) * 100) / 100).toFixed(1) + unit) : parseInt(field) < field_min - (field_max - field_min) * .3 ? '< ' + String((Math.round((field_min - (field_max - field_min) * .3) * 100) / 100).toFixed(1) + unit) : String((Math.round(field * 100) / 100).toFixed(1) + unit),
+                            placement: parseInt(field) > parseInt((field_max + field_min) / 2) ? 'outside' : 'inside',
+                        },
+                        tooltip: 'Current ' + metric + ' is: ' + String(field + unit),
+                        marker: {
+                            visible: true,
+                            fill: '#000000',
+                            type: 'triangle-down',
+                            size: 15,
+                            outline: {
+                                width: 0
+                            }
+                        },
+                        color: ['none', 0]
+                    }, ]
+                }],
+                toolbar_visible: false
+            });
+
+
+        }
+    </script>
+</body>
+
+</html>

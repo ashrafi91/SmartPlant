@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Linear Gantt Gauge Chart | JSCharting</title>
+    <meta http-equiv="content-type" content="text-html; charset=utf-8" />
+
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+
+    <script type="text/javascript" src="../jsc/modules/types.js"></script>
+    <script type="text/javascript" src="../jsc/icons/weather/moon.js"></script>
+    <script type="text/javascript" src=" ../jsc/icons/material/image/wb-sunny.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/default.css" />
+    <style type="text/css">
+        /*CSS*/
+    </style>
+</head>
+
+<body>
+    <div id="chartDiv" style="max-width: 740px;height: 500px;margin: 0px auto;"></div>
+
+    <script type="text/javascript">
+        var chart = JSC.chart('chartDiv', {
+            debug: false,
+            type: 'gauge linear horizontal',
+            defaultSeries: {
+                type: 'column roundcaps',
+            },
+            legend_visible: false,
+            xAxis: [{
+                spacingPercentage: 0.6,
+                staticColumnWidth: 30,
+                defaultTick: {
+                    padding: 20,
+
+                    /*Defining label object enables it.*/
+                    label: {}
+                }
+            }],
+            yAxis: [{
+                scale: {
+                    range: [15, 36],
+                    interval: 1
+                },
+                line_color: '#e9e9e9',
+                defaultTick: {
+                    enabled: false
+                },
+                customTicks: [{
+                    value: 15,
+                    label_text: 'Low'
+                }, {
+                    value: 25,
+                    label_text: 'Normal'
+                }, {
+                    value: 36,
+                    label_text: 'High'
+                }, {
+                    orientation: 'top',
+                    value: 28,
+                    gridLine: {
+                        width: 2,
+                        dashStyle: 'dash',
+                        onTop: true
+                    },
+                    label_text: "PM"
+                }, {
+                    value: 19,
+                    gridLine: {
+                        width: 2,
+                        dashStyle: 'dash',
+                        onTop: true
+                    },
+                    label_text: "7AM",
+                }],
+                markers: [{
+                    value: 24,
+                    marker: {
+                        visible: true,
+                        fill: '#d81c36',
+                        onTop: true,
+                    },
+                    label_text: 'High',
+                }],
+            }],
+            series: [{
+
+                name: 'Temperature',
+                points: [
+                    ['Temperature', [18, 30]],
+                ]
+            }, {
+                name: 'Temperature',
+                points: [{
+                    x: 'Temperature',
+                    y: [24, 24],
+                    label_text: 'Current',
+                    size: 12
+                }, ]
+            }],
+            toolbar_visible: false
+        });
+
+        function tooltipFormatter(point) {
+            var twoDigit = function(v) {
+                return ('0' + v).slice(-2);
+            };
+            var formatHour = function(v) {
+                var ampm = v <= 12 ? 'PM' : 'AM',
+                    hour = Math.floor(v) % 12,
+                    min = Math.floor((v % 1) * 60);
+                return (hour || 12) + ':' + twoDigit(min) + ampm;
+            };
+            return '<b>%name ' + '<br/>' + formatHour(point.y[0]) + ' - ' + formatHour(point.y[1]);
+        }
+    </script>
+</body>
+
+</html>
